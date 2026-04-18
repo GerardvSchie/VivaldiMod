@@ -1,0 +1,34 @@
+{
+  "name": "VivaldiMod",
+  "description": "Modify the vivaldi browser with custom scripts",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run pack",
+    "clean": "cmd /c \".\\dist\\vivaldi\\reset.cmd\" && rmdir /s /q node_modules && rmdir /s /q dist",
+    "pack": "npm run pack:extension && npm run pack:vivaldi",
+    "pack:extension": "tsc && vite build",
+    "pack:vivaldi": "tsc && vite build --c vite.config.vivaldi.ts && cmd /c \".\\dist\\vivaldi\\inject.cmd\"",
+    "qa": "eslint . --fix && prettier . --write --list-different"
+  },
+  "author": "Gerard van Schie",
+  "license": "ISC",
+  "dependencies": {
+    "consola": "^3.4.2"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "2.4.0",
+    "@eslint/js": "^9.15.0",
+    "@types/chrome": "^0.1.1",
+    "@types/node": "^24.0.15",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
+    "jiti": "^2.6.1",
+    "prettier": "3.8.1",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^7.0.0",
+    "vite-plugin-zip-pack": "^1.2.4"
+  }
+}

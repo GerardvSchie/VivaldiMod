@@ -1,0 +1,24 @@
+/* minimize space used by things other than tabs */
+.win #tabs-container:not(.none).top {
+  /* padding-left: 22px !important; */
+  padding-right: 60px !important;
+}
+
+button.vivaldi {
+  width: 22px !important;
+  color: var(--colorFg) !important;
+}
+
+div.window-buttongroup {
+  button {
+    width: 20px !important;
+  }
+}
+
+span.expand-arrow {
+  display: none !important;
+}
+
+thead {
+  color: blue !important;
+}
